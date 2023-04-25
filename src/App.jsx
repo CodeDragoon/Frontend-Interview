@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Layout from "./common-components/layout/Layout";
 import Home from "./pages/home/Home";
-import Layout from "./pages/layout/Layout";
 import InfiniteScrollUsingObserver from "./pages/InfiniteScrollUsingObserver/InfiniteScrollUsingObserver";
 import InfiniteScrollUsingWindowScroll from "./pages/InfiniteScrollUsingWindowScroll/InfiniteScrollUsingWindowScroll";
 import LruCache from "./pages/lruCache/LruCache";
