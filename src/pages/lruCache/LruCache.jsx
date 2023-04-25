@@ -4,7 +4,9 @@ import "./styles.css";
 const calcRes = (val) => {
   return "ExpensiveOp" + val;
 };
-const MAX_LIMIT = 3;
+const MAX_LIMIT = 3; // cache size
+const ipKeys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 const useLruCache = () => {
   const [cache, setCache] = useState([]);
   const [message, setMessage] = useState("Start by pressing any input buttons");
@@ -44,7 +46,6 @@ const useLruCache = () => {
     store,
   };
 };
-const ipKeys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const LruCache = () => {
   const { message, result, cache, getData, store } = useLruCache();
 
@@ -58,6 +59,7 @@ const LruCache = () => {
       {ipKeys.map((item) => {
         return (
           <button
+            className="lru-buttons"
             key={item}
             onClick={() => {
               getData(item);
@@ -68,7 +70,7 @@ const LruCache = () => {
         );
       })}
       <div className={"row"}>{`Cache state -> ${JSON.stringify(cache)}`}</div>
-      <div className={"row"}>{`Storage state ->${JSON.stringify(store)}`}</div>
+      <div className={"row"}>{`Map state -> ${JSON.stringify(store)}`}</div>
     </div>
   );
 };
