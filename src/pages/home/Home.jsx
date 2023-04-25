@@ -1,16 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Loader from "../../common-components/loader/Loader";
 import "./styles.css";
-import data from "./problems.json";
+import data from "../../assets/problems.json";
 
 const problems = data.problems;
 
-const Article = React.lazy(() => {
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, 500);
-  }).then(() => import("../../common-components/articleCard/ArticleCard"));
-});
+const Article = React.lazy(() =>
+  import("../../common-components/articleCard/ArticleCard")
+);
 
 const Home = () => {
   return (
