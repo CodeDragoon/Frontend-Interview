@@ -6,6 +6,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  font-size: 16px;
 }
 
 .header {
@@ -31,4 +32,16 @@ body {
 }
 .outlet-container {
   padding: 10px;
+}
+.implementation-button {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  background-color: var(--primary);
+  color: white;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  font-weight: bold;
 }
