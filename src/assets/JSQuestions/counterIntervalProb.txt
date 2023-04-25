@@ -1,0 +1,48 @@
+import React, { useCallback, useEffect, useState } from "react";
+import "./styles.css";
+
+const InputComp = ({ value, handleChange }) => {
+  console.log("CIPT");
+  return (
+    <input
+      value={value}
+      onChange={(e) => {
+        handleChange(e.target.value);
+      }}
+    />
+  );
+};
+
+const CustomInput = React.memo(InputComp);
+
+const time = 1000;
+export default function App() {
+  const [counter, setCounter] = useState(0);
+  const [ipt, setIpt] = useState("");
+  const handleClick = () => {
+    setCounter((counter) => counter + 1);
+  };
+
+  useEffect(() => {
+    const id = setInterval(handleClick, time);
+    return () => {
+      clearInterval(id);
+    };
+  }, [counter]);
+
+  const handleInput = useCallback(
+    (val) => {
+      setIpt(val);
+    },
+    [ipt]
+  );
+
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>{counter}</h2>
+      <CustomInput value={ipt} handleChange={handleInput} />
+      <button onClick={handleClick}>INC</button>
+    </div>
+  );
+}

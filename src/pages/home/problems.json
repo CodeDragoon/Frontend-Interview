@@ -9,6 +9,11 @@
       "label": "LRU Cache Implementation in React",
       "route": "lru-cache",
       "description": "This article talks about how to build and visualise LRU Cache"
+    },
+    {
+      "label": "Nested Comments Implementation in React",
+      "route": "nested-comments",
+      "description": "This article talks about how to build and visualise Nested Comments like Facebook except nesting can be to any level"
     }
   ]
 }
