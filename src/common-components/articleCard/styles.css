@@ -1,0 +1,10 @@
+.article-card-container {
+  height: 100px;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.article-link {
+  text-decoration: inherit;
+  color: inherit;
+}
