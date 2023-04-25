@@ -1,0 +1,12 @@
+.comment-container {
+  margin: 10px;
+  padding-left: 30px;
+}
+.comment-text {
+  font-weight: bold;
+}
+.comment-box {
+  border: 1px solid gray;
+  border-radius: 4px;
+  max-width: 200px;
+}
