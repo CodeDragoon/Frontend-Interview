@@ -1,0 +1,35 @@
+
+const p1 = Promise.resolve("123");
+const p2 = Promise.resolve("Error");
+const p3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("Third")
+    },1000)
+})
+
+async function mySettle(promises) {
+  const execProm1 = new Promise((resolve, reject) => {
+    const result = [];
+    const execProm = (ct) => {
+      if (ct < promises.length) {
+        promises[ct]
+          .then((res) => {
+            result.push(res);
+            execProm(ct + 1);
+          })
+          .catch((err) => {
+            result.push(err);
+            execProm(ct + 1);
+          });
+      } else {
+        resolve(result);
+      }
+    };
+    execProm(0);
+  });
+  return execProm1;
+}
+
+mySettle([p3, p2, p1]).then((res) => {
+  console.log("----->", res);
+});
