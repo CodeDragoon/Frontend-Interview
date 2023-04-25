@@ -1,5 +1,6 @@
 # Frontend-Interview
 Top Advanced React/Javascript problems asked in frontend interview
 # Project structure
-   Main Page has links to various other pages and each page talks about some topic
-   I am testing the code sandbox
+   Home Page has links to various articles which are lazy loaded
+# How to contribute
+   Create a pr using the same pattern 
