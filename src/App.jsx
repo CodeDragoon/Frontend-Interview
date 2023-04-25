@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import InfiniteScrollUsingObserver from "./pages/InfiniteScrollUsingObserver/InfiniteScrollUsingObserver";
 import InfiniteScrollUsingWindowScroll from "./pages/InfiniteScrollUsingWindowScroll/InfiniteScrollUsingWindowScroll";
 import LruCache from "./pages/lruCache/LruCache";
+import NestedComments from "./pages/nestedComments/NestedComments";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             element={<InfiniteScrollUsingWindowScroll />}
           />
           <Route path={"lru-cache"} element={<LruCache />} />
+          <Route path="nested-comments" element={<NestedComments />} />
         </Route>
       </Routes>
     </>
