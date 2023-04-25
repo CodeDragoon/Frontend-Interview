@@ -1,25 +1,31 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import Loader from "../../common-components/loader/Loader";
+import "./styles.css";
+import data from "./problems.json";
 
-import React from 'react';
-import { Link } from 'react-router-dom'
+const problems = data.problems;
 
-const problems = [{
-    label: "Infinite Scroll using Intersection Observer",
-    route: "/infinite-scroll-using-intersection-observer"
-}, {
-    label: "Infinite Scroll using Window Scroll",
-    route: "infinite-scroll-using-window-scroll"
-}]
+const Article = React.lazy(() => {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, 500);
+  }).then(() => import("../../common-components/articleCard/ArticleCard"));
+});
 
 const Home = () => {
-    return <div>
-        Top Frontend Interview Questions asked these days
-        {
-            problems.map(item => {
-                return <Link to={item.route}>
-                    <div>{item.label}</div>
-                </Link>
-            })
-        }
+  return (
+    <div className={"main-section"}>
+      <div>
+        <h1>Top Frontend Interview Questions asked these days</h1>
+        {problems.map((item) => {
+          return (
+            <React.Suspense fallback={Loader}>
+              <Article {...item} />
+            </React.Suspense>
+          );
+        })}
+      </div>
     </div>
-}
-export default Home
+  );
+};
+export default Home;
