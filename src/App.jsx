@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./common-components/layout/Layout";
+import About from "./pages/about/About";
 import Home from "./pages/home/Home";
 import InfiniteScrollUsingObserver from "./pages/InfiniteScrollUsingObserver/InfiniteScrollUsingObserver";
 import InfiniteScrollUsingWindowScroll from "./pages/InfiniteScrollUsingWindowScroll/InfiniteScrollUsingWindowScroll";
@@ -23,6 +24,7 @@ const App = () => {
           />
           <Route path={"lru-cache"} element={<LruCache />} />
           <Route path="nested-comments" element={<NestedComments />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </>

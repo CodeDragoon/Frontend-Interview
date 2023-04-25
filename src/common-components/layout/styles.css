@@ -1,31 +1,34 @@
 :root {
-    --primary: #1D3461;
-    --secondary: #1F487E;
+  --primary: #1d3461;
+  --secondary: #1f487e;
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--primary);
-    height: 40px;
-    padding: 10px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary);
+  height: 40px;
+  padding: 10px;
+  align-items: center;
 }
 
 .header-item {
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
 }
 
 .header-item-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outlet-container {
+  padding: 10px;
 }

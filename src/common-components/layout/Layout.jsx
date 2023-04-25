@@ -7,18 +7,21 @@ const Layout = () => {
   return (
     <div>
       <div className="header">
-        <span className={"header-item-left"}>
-          <Link to={"/"}>
+        <span>
+          <Link to={"/"} className={"header-item-left"}>
             <LabradorSvg fill={"#ffffff"} height={30} width={30} />
+            <span className="header-item">Frontend Interview</span>
           </Link>
-          <span className="header-item">Frontend Interview</span>
         </span>
         <span>
-          <span className="header-item">Buy me a Coffee</span>
-          <span className="header-item">About</span>
+          <Link to="/about">
+            <span className="header-item">About</span>
+          </Link>
         </span>
       </div>
-      <Outlet />
+      <div className="outlet-container">
+        <Outlet />
+      </div>
     </div>
   );
 };
