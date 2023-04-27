@@ -12,7 +12,7 @@ const Article = React.lazy(() =>
 const Home = () => {
   return (
     <div className={"main-section"}>
-      <div>
+      <div className={"article-section"}>
         <h1>Top Frontend Interview Questions asked these days</h1>
         {problems.map((item) => {
           return (

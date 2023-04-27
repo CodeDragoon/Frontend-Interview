@@ -1,7 +1,8 @@
 .article-card-container {
-  height: 100px;
+  min-height: 100px;
   padding: 10px;
-  border-bottom: 1px solid grey;
+  padding-bottom: 30px;
+  border-bottom: 1px solid gray;
 }
 
 .article-link {
