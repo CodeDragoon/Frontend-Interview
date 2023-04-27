@@ -63,9 +63,11 @@ const InfiniteScrollUsingWindowScroll = () => {
   const { data = [], loading, getKey } = useInfScroll();
   return (
     <div>
-      <div className={"inf-scroll-window-title"}>
-        This is Example of Infinite Scroll using Catfacts API
-      </div>
+      <h1>Infinte Scroll using window.scroll</h1>
+      <h4>
+        Please open network tab to see it in action. Don't forget to check its
+        github implementation
+      </h4>
       {data.map((item) => (
         <Node key={getKey()} fact={item.fact} />
       ))}

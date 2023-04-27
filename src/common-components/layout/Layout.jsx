@@ -5,8 +5,11 @@ import LabradorSvg from "../../assets/svgs/labradorSvg";
 import data from "../../assets/problems.json";
 
 const useLayout = () => {
+  const path = window.location.pathname;
+  if (path.indexOf("/home") === 0) {
+    return { handleCheckImplementation: null };
+  }
   const getGithubLink = () => {
-    const path = window.location.pathname;
     const problems = data.problems;
     for (let i = 0; i < problems.length; i++) {
       let item = problems[i];
@@ -23,32 +26,44 @@ const useLayout = () => {
   };
   return { handleCheckImplementation };
 };
+
+const Header = () => {
+  return (
+    <div className="header">
+      <span>
+        <Link to={"/"} className={"header-item-left"}>
+          <LabradorSvg fill={"#ffffff"} height={30} width={30} />
+          <span className="header-item">Frontend Interview</span>
+        </Link>
+      </span>
+      <span>
+        <Link to="/about">
+          <span className="header-item">About</span>
+        </Link>
+      </span>
+    </div>
+  );
+};
 const Layout = () => {
   const { handleCheckImplementation } = useLayout();
   return (
     <div>
-      <div className="header">
-        <span>
-          <Link to={"/"} className={"header-item-left"}>
-            <LabradorSvg fill={"#ffffff"} height={30} width={30} />
-            <span className="header-item">Frontend Interview</span>
-          </Link>
-        </span>
-        <span>
-          <Link to="/about">
-            <span className="header-item">About</span>
-          </Link>
-        </span>
-      </div>
+      <Header />
       <div className="outlet-container">
-        <Outlet />
+        <div className="outlet-style">
+          <Outlet />
+        </div>
       </div>
-      <button
-        className={"implementation-button"}
-        onClick={handleCheckImplementation}
-      >
-        Check Implementation
-      </button>
+      {handleCheckImplementation ? (
+        <button
+          className={"implementation-button"}
+          onClick={handleCheckImplementation}
+        >
+          Check Implementation
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
