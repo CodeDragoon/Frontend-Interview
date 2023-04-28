@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import ImplementationButton from "../../common-components/implementation/ImplementationButton";
 import "./styles.css";
 
 const useUniqueId = () => {
@@ -71,6 +72,7 @@ const NestedComments = () => {
       ) : (
         <Comment node={commentTree} addComment={addComment} />
       )}
+      <ImplementationButton />
     </div>
   );
 };

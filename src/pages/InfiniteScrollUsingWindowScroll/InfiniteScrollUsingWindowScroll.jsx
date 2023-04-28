@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import ImplementationButton from "../../common-components/implementation/ImplementationButton";
 
 import "./styles.css";
 
@@ -72,6 +73,7 @@ const InfiniteScrollUsingWindowScroll = () => {
         <Node key={getKey()} fact={item.fact} />
       ))}
       {loading && <div>I am Loading</div>}
+      <ImplementationButton />
     </div>
   );
 };

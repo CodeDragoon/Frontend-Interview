@@ -2,30 +2,6 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import "./styles.css";
 import LabradorSvg from "../../assets/svgs/labradorSvg";
-import data from "../../assets/problems.json";
-
-const useLayout = () => {
-  const path = window.location.pathname;
-  if (path.indexOf("/home") === 0) {
-    return { handleCheckImplementation: null };
-  }
-  const getGithubLink = () => {
-    const problems = data.problems;
-    for (let i = 0; i < problems.length; i++) {
-      let item = problems[i];
-      if (path.indexOf(item.route) >= 0) {
-        return item.github || "";
-      }
-    }
-
-    return "";
-  };
-  const handleCheckImplementation = () => {
-    const gh = getGithubLink();
-    window.open(gh);
-  };
-  return { handleCheckImplementation };
-};
 
 const Header = () => {
   return (
@@ -45,7 +21,6 @@ const Header = () => {
   );
 };
 const Layout = () => {
-  const { handleCheckImplementation } = useLayout();
   return (
     <div>
       <Header />
@@ -54,16 +29,6 @@ const Layout = () => {
           <Outlet />
         </div>
       </div>
-      {handleCheckImplementation ? (
-        <button
-          className={"implementation-button"}
-          onClick={handleCheckImplementation}
-        >
-          Check Implementation
-        </button>
-      ) : (
-        ""
-      )}
     </div>
   );
 };
