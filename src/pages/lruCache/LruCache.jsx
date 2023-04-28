@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ImplementationButton from "../../common-components/implementation/ImplementationButton";
 import "./styles.css";
 
 const calcRes = (val) => {
@@ -71,6 +72,7 @@ const LruCache = () => {
       })}
       <div className={"row"}>{`Cache state -> ${JSON.stringify(cache)}`}</div>
       <div className={"row"}>{`Map state -> ${JSON.stringify(store)}`}</div>
+      <ImplementationButton />
     </div>
   );
 };
